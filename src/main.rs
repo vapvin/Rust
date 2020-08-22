@@ -1,8 +1,12 @@
+use std::io;
+
 fn main() {
-    println!("Hello, world!");
-    calculate_weight_on_mars(100.0);
+    let mut input = String::new();
+    io::stdin().read_line(&mut input);
+    let mut mars_weight = calculate_weight_on_mars(100.0);
+    println!("Weight: {}kg", mars_weight);
 }
 
-fn calculate_weight_on_mars(weight: f32) -> ? f32 {
-    return weight;
+fn calculate_weight_on_mars(weight: f32) -> f32 {
+    return (weight / 9.81) * 3.711;
 }
